@@ -1,0 +1,18 @@
+.nav-wrapper {
+  padding: 0 20px;
+}
+
+nav ul li.active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.auth-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px
+}
+
+.auth-block .card {
+  width: 400px
+}
