@@ -12,7 +12,7 @@ import {CommonModule} from '@angular/common'
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    CommonModule,
+    CommonModule
   ]
 })
 
