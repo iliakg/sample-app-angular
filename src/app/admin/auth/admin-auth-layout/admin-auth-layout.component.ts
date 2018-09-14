@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 @Component({
-  templateUrl: './admin-auth-layout.component.html',
-  styleUrls: ['./admin-auth-layout.component.css']
+  templateUrl: './admin-auth-layout.component.html'
 })
 export class AdminAuthLayoutComponent implements OnInit {
 
