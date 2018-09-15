@@ -8,13 +8,17 @@ html, body {
   padding: 0;
 }
 
-.toast.error{
+.toast {
+  background-color: $primary-color;
+}
+
+.toast.error {
   background-color: color("deep-orange", "accent-4");
 }
 
-.auth_wrapper{
-  background: #00B4DB;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+.auth_wrapper {
+  background: #00B4DB; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   display: flex;
@@ -32,4 +36,27 @@ html, body {
   margin-top: 8px;
   margin-right: 0 !important;
   float: right;
+}
+
+.wrap {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.content_wrap {
+  padding: 0 !important;
+}
+
+nav {
+  background: -webkit-linear-gradient(to right, #0D47A1, #0575E6); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0D47A1, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.nav-wrapper .brand-logo {
+  padding: 0 20px;
+}
+
+.content_data {
+  padding: 0 20px;
 }
