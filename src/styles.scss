@@ -17,9 +17,9 @@ html, body {
 }
 
 .auth_wrapper {
-  background: #00B4DB; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00B4DB;
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+  background: linear-gradient(to right, #0083B0, #00B4DB);
 
   display: flex;
   justify-content: center;
@@ -44,13 +44,57 @@ html, body {
   padding: 0;
 }
 
+.wrap .sidenav {
+  background: #232526;
+  background: -webkit-linear-gradient(to left, #414345, #232526);
+  background: linear-gradient(to left, #414345, #232526);
+
+  padding: 0;
+
+  .user-view {
+    padding: 32px 32px 22px;
+  }
+
+  li {
+    &:hover, &.active{
+      background: rgba(255, 255, 255, .1);
+    }
+
+    a {
+      color: #fff;
+    }
+
+    i.material-icons{
+      margin-right: 16px;
+      color: #fff;
+    }
+  }
+}
+
+.sidenav-user-view__avatar {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 10px 10px 0;
+}
+
+.sidenav-user-view__links {
+  display: inline-block;
+  vertical-align: top;
+
+  a {
+    display: block;
+    margin-bottom: 8px;
+    line-height: 100%;
+  }
+}
+
 .content_wrap {
   padding: 0 !important;
 }
 
 nav {
-  background: -webkit-linear-gradient(to right, #0D47A1, #0575E6); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0D47A1, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #0D47A1, #0575E6);
+  background: linear-gradient(to right, #0D47A1, #0575E6);
 }
 
 .nav-wrapper .brand-logo {

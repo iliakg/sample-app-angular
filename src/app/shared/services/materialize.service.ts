@@ -8,4 +8,9 @@ export class MaterialService {
   static updateTextInputs() {
     M.updateTextFields()
   }
+
+  static initSidenav() {
+    const el = document.querySelectorAll('.sidenav')
+    M.Sidenav.init(el)
+  }
 }

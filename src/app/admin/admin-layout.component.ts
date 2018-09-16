@@ -1,6 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core'
-
-declare var M
+import {MaterialService} from '../shared/services/materialize.service'
 
 @Component({
   templateUrl: './admin-layout.component.html'
@@ -14,6 +13,6 @@ export class AdminLayoutComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    M.Sidenav.init(document.querySelectorAll('.sidenav'));
+    MaterialService.initSidenav()
   }
 }

@@ -1,22 +1,44 @@
 <div class="wrap row lime lighten-5">
   <ul id="slide-out" class="sidenav sidenav-fixed col l3">
     <li>
-      <a class="waves-effect" routerLink="/admin/dashboard">
-        <i class="material-icons">menu</i>
-        Third Link With Waves
+      <div class="user-view">
+        <div class="background">
+          <img [src]="'assets/admin/admin_abstract_sidebar_background.jpg'">
+        </div>
+        <div class="sidenav-user-view__avatar">
+          <a href="#"><img class="circle" [src]="'assets/admin/default_avatar.jpg'"></a>
+        </div>
+        <div class="sidenav-user-view__links">
+          <a href="#" class="white-text">John Doe</a>
+          <a href="#" class="white-text">jdandturk@gmail.com</a>
+          <a href="#" class="white-text">Выход</a>
+        </div>
+      </div>
+    </li>
+
+    <li routerLinkActive="active">
+      <a routerLink="/admin/dashboard" class="waves-effect">
+        <i class="material-icons">home</i> Панель управления
       </a>
-      <a class="waves-effect" routerLink="/admin/dashboard">
-        <i class="material-icons">menu</i>
-        Third Link With Waves
+    </li>
+    <li>
+      <a href="#!" class="waves-effect">
+        <i class="material-icons">format_list_bulleted</i> First Link With Icon
       </a>
-      <a class="waves-effect" routerLink="/admin/dashboard">
-        <i class="material-icons">menu</i>
-        Third Link With Waves
+    </li>
+    <li>
+      <a href="#!" class="waves-effect">
+        <i class="material-icons">cloud</i> First Link With Icon
+      </a>
+    </li>
+    <li>
+      <a href="#!" class="waves-effect">
+        <i class="material-icons">cloud</i> First Link With Icon
       </a>
     </li>
   </ul>
 
-  <div class="col offset-l3 l9 content_wrap">
+  <div class="col offset-l3 m3 l9 content_wrap">
 
     <div class="navbar-fixed">
       <nav>
