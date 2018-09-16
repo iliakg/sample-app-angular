@@ -1,20 +1,18 @@
 <div class="wrap row lime lighten-5">
   <ul id="slide-out" class="sidenav sidenav-fixed col l3">
-    <li>
-      <div class="user-view">
-        <div class="background">
-          <img [src]="'assets/admin/admin_abstract_sidebar_background.jpg'">
-        </div>
-        <div class="sidenav-user-view__avatar">
-          <a href="#"><img class="circle" [src]="'assets/admin/default_avatar.jpg'"></a>
-        </div>
-        <div class="sidenav-user-view__links">
-          <a href="#" class="white-text">John Doe</a>
-          <a href="#" class="white-text">jdandturk@gmail.com</a>
-          <a href="#" class="white-text">Выход</a>
-        </div>
+    <div class="user-view">
+      <div class="background">
+        <img [src]="'assets/admin/admin_abstract_sidebar_background.jpg'">
       </div>
-    </li>
+      <div class="sidenav-user-view__avatar">
+        <a href="#"><img class="circle" [src]="'assets/admin/default_avatar.jpg'"></a>
+      </div>
+      <div class="sidenav-user-view__links">
+        <a href="#" class="white-text">John Doe</a>
+        <a href="#" class="white-text">jdandturk@gmail.com</a>
+        <a href="#" class="white-text">Выход</a>
+      </div>
+    </div>
 
     <li routerLinkActive="active">
       <a routerLink="/admin/dashboard" class="waves-effect">
