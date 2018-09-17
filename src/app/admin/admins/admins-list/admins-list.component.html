@@ -1,21 +1,29 @@
 <div
-  class="row"
   *ngIf="admins$ | async as admins; else loader"
+  class="table_wrap"
 >
-  <div class="col s12">
-    <div class="collection" *ngIf="admins.length !== 0; else empty">
-      <a
-        *ngFor="let admin of admins"
-        [routerLink]="['/admins', admin._id]"
-        class="collection-item"
-      >
-        {{admin.email}}
-      </a>
-    </div>
-    <ng-template #empty>
-      <div class="center">Нет админов</div>
-    </ng-template>
-  </div>
+  <table
+    class="striped highlight white z-depth-1"
+    *ngIf="admins.length !== 0; else empty"
+  >
+    <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let admin of admins">
+      <td>{{admin.name}}</td>
+      <td>{{admin.email}}</td>
+      <td>actions</td>
+    </tr>
+    </tbody>
+  </table>
+  <ng-template #empty>
+    <div class="center">Нет админов</div>
+  </ng-template>
 </div>
 
 <ng-template #loader>
