@@ -1,0 +1,23 @@
+<div
+  class="row"
+  *ngIf="admins$ | async as admins; else loader"
+>
+  <div class="col s12">
+    <div class="collection" *ngIf="admins.length !== 0; else empty">
+      <a
+        *ngFor="let admin of admins"
+        [routerLink]="['/admins', admin._id]"
+        class="collection-item"
+      >
+        {{admin.email}}
+      </a>
+    </div>
+    <ng-template #empty>
+      <div class="center">Нет админов</div>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

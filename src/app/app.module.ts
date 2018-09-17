@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core'
 import {BrowserModule} from '@angular/platform-browser'
-import {HttpClientModule} from '@angular/common/http'
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import {PreloadAllModules, RouterModule} from '@angular/router'
 
 import {AppComponent} from './app.component'
+import {AdminTokenInterceptor} from './admin/shared/services/admin-token.interceptor'
 
 @NgModule({
   imports: [
@@ -20,7 +21,9 @@ import {AppComponent} from './app.component'
   declarations: [
     AppComponent
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, multi: true, useClass: AdminTokenInterceptor},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

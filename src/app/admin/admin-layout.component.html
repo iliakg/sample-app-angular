@@ -10,7 +10,7 @@
       <div class="sidenav-user-view__links">
         <a href="#" class="white-text">John Doe</a>
         <a href="#" class="white-text">jdandturk@gmail.com</a>
-        <a href="#" class="white-text">Выход</a>
+        <a href="#" class="white-text" (click)="logout($event)">Выйти</a>
       </div>
     </div>
 
@@ -19,17 +19,12 @@
         <i class="material-icons">home</i> Панель управления
       </a>
     </li>
-    <li>
-      <a href="#!" class="waves-effect">
-        <i class="material-icons">format_list_bulleted</i> First Link With Icon
+    <li routerLinkActive="active">
+      <a routerLink="/admin/admins" class="waves-effect">
+        <i class="material-icons">group</i> Список админов
       </a>
     </li>
-    <li>
-      <a href="#!" class="waves-effect">
-        <i class="material-icons">cloud</i> First Link With Icon
-      </a>
-    </li>
-    <li>
+    <li routerLinkActive="active">
       <a href="#!" class="waves-effect">
         <i class="material-icons">cloud</i> First Link With Icon
       </a>
