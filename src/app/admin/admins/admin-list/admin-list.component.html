@@ -1,3 +1,8 @@
+<app-admin-header
+  [title]="'Список админов'"
+  [link]="{text: 'add', path: ['new']}"
+></app-admin-header>
+
 <div
   *ngIf="!loading; else loader"
   class="table_wrap"

@@ -1,0 +1,14 @@
+<div class="navbar-fixed">
+  <nav class="col l9">
+    <div class="nav-wrapper">
+      <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only">
+        <i class="material-icons">menu</i>
+      </a>
+      <a href="#!" class="brand-logo">{{title || 'SampleAppAngular'}}</a>
+
+      <a [routerLink]="link['path']" *ngIf="link" class="right">
+        <i class="large material-icons">{{link['text']}}</i>
+      </a>
+    </div>
+  </nav>
+</div>

@@ -7,7 +7,8 @@ import {AdminFormComponent} from './admin-form/admin-form.component'
 
 const adminRoutes: Routes = [
   {path: '', component: AdminListComponent},
-  {path: ':id/edit', component: AdminFormComponent},
+  {path: 'new', component: AdminFormComponent},
+  {path: ':id/edit', component: AdminFormComponent}
 ]
 
 @NgModule({

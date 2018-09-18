@@ -16,6 +16,10 @@ html, body {
   background-color: color("deep-orange", "accent-4");
 }
 
+nav i.material-icons {
+  font-size: 2.5rem;
+}
+
 .material-icons.pointer {
   cursor: pointer;
 }
@@ -109,12 +113,8 @@ nav {
   padding: 0 20px;
 }
 
-.content_data {
-  padding: 0 20px;
-}
-
 .table_wrap {
-  margin-top: 20px;
+  margin: 20px;
 
   table {
     border-radius: 2px;
@@ -125,7 +125,7 @@ nav {
   }
 }
 
-.form_wrapper{
-  margin-top: 20px;
+.form_wrapper {
+  margin: 20px;
   padding: 20px;
 }
