@@ -2,7 +2,15 @@ declare var M
 
 export class MaterialService {
   static toast(message: string, classes: string = '') {
-    M.toast({html: message, classes: classes})
+    let msg = ''
+    if (message) {
+      msg = message
+    } else {
+      msg = 'Непонятная ошибка'
+      console.log('MaterialService toast error: ' + message)
+    }
+
+    M.toast({html: msg, classes: classes})
   }
 
   static updateTextInputs() {
@@ -10,7 +18,7 @@ export class MaterialService {
   }
 
   static initSidenav() {
-    const el = document.querySelectorAll('.sidenav')
+    let el = document.querySelectorAll('.sidenav')
     M.Sidenav.init(el)
   }
 }

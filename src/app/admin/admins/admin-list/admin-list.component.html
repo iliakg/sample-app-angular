@@ -1,5 +1,5 @@
 <div
-  *ngIf="admins$ | async as admins; else loader"
+  *ngIf="!loading; else loader"
   class="table_wrap"
 >
   <table
@@ -15,9 +15,15 @@
     </thead>
     <tbody>
     <tr *ngFor="let admin of admins">
-      <td>{{admin.name}}</td>
-      <td>{{admin.email}}</td>
-      <td>actions</td>
+      <td>
+        <a [routerLink]="[admin._id, 'edit']">{{admin.name}}</a>
+      </td>
+      <td>
+        <a [routerLink]="[admin._id, 'edit']">{{admin.email}}</a>
+      </td>
+      <td>
+        <i class="material-icons pointer delete-link" (click)="removeAdmin(admin)">delete</i>
+      </td>
     </tr>
     </tbody>
   </table>

@@ -15,6 +15,10 @@ export class AdminsService {
     return this.http.get<Admin[]>('/api/admins')
   }
 
+  getById(id: string): Observable<Admin> {
+    return this.http.get<Admin>(`/api/admins/${id}`)
+  }
+
   create(admin: Admin): Observable<Admin> {
     return this.http.post<Admin>('/api/admins', admin)
   }

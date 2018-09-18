@@ -1,0 +1,32 @@
+<div class="white z-depth-1 form_wrapper">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="input-field">
+      <input
+        formControlName="email"
+        id="email"
+        type="email"
+        [ngClass]="{'invalid': form.get('email').invalid && form.get('email').touched}"
+      >
+      <label for="name">Email</label>
+      <span
+        class="helper-text red-text"
+        *ngIf="form.get('email').invalid && form.get('email').touched"
+      >
+        <span *ngIf="form.get('email').errors['required']">
+          Email не может быть пустым.
+        </span>
+      </span>
+    </div>
+
+    <div class="input-field">
+      <input formControlName="name" id="name" type="text">
+      <label for="name">Имя</label>
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="form.invalid || form.disabled" class="waves-effect waves-light btn">
+        Сохранить изменения
+      </button>
+    </div>
+  </form>
+</div>

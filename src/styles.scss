@@ -16,6 +16,10 @@ html, body {
   background-color: color("deep-orange", "accent-4");
 }
 
+.material-icons.pointer {
+  cursor: pointer;
+}
+
 .auth_wrapper {
   background: #00B4DB;
   background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
@@ -39,6 +43,10 @@ html, body {
 }
 
 .wrap {
+  background: #fffde7;
+  background: -webkit-linear-gradient(to right, #ffe0b2, #fffde7);
+  background: linear-gradient(to right, #ffe0b2, #fffde7);
+
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -56,7 +64,7 @@ html, body {
   }
 
   li {
-    &:hover, &.active{
+    &:hover, &.active {
       background: rgba(255, 255, 255, .1);
     }
 
@@ -64,7 +72,7 @@ html, body {
       color: #fff;
     }
 
-    i.material-icons{
+    i.material-icons {
       margin-right: 16px;
       color: #fff;
     }
@@ -105,10 +113,19 @@ nav {
   padding: 0 20px;
 }
 
-.table_wrap{
+.table_wrap {
   margin-top: 20px;
 
-  table{
+  table {
     border-radius: 2px;
   }
+
+  .material-icons.delete-link:hover {
+    color: color("red", "base");
+  }
+}
+
+.form_wrapper{
+  margin-top: 20px;
+  padding: 20px;
 }
