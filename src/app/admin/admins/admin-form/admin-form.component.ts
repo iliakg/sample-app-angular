@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {FormControl, FormGroup, Validators} from '@angular/forms'
-import {ActivatedRoute, Params} from '@angular/router'
+import {ActivatedRoute, Params, Router} from '@angular/router'
 import {switchMap} from 'rxjs/operators'
 import {of} from 'rxjs'
 
@@ -17,13 +17,17 @@ export class AdminFormComponent implements OnInit {
   isNew = true
   admin: Admin
 
-  constructor(private adminsService: AdminsService, private route: ActivatedRoute) {
+  constructor(
+    private adminsService: AdminsService,
+    private router: Router,
+    private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.form = new FormGroup({
-      name: new FormControl(null),
-      email: new FormControl(null, Validators.required)
+      name: new FormControl(null, [Validators.minLength(4), Validators.maxLength(50)]),
+      email: new FormControl(null, Validators.required),
+      password: new FormControl(null, [Validators.minLength(6), Validators.maxLength(50)])
     })
 
     this.form.disable()
@@ -35,6 +39,10 @@ export class AdminFormComponent implements OnInit {
             if (params['id']) {
               this.isNew = false
               return this.adminsService.getById(params['id'])
+            } else {
+              this.form.controls['password'].setValidators(
+                [Validators.required, Validators.minLength(6), Validators.maxLength(50)]
+              )
             }
 
             return of(null)
@@ -60,31 +68,38 @@ export class AdminFormComponent implements OnInit {
   }
 
   onSubmit() {
-    let obs$
     this.form.disable()
 
     const newAdmin: Admin = {
       name: this.form.value.name,
-      email: this.form.value.email
+      email: this.form.value.email,
+      password: this.form.value.password
     }
 
     if (this.isNew) {
-      obs$ = this.adminsService.create(newAdmin)
+      this.adminsService.create(newAdmin).subscribe(
+        admin => {
+          MaterialService.toast(`Добавлен новый админ ${admin.email}`)
+          this.router.navigate(['/admin/admins'])
+        },
+        error => {
+          MaterialService.toast(error.error.message, 'error')
+          this.form.enable()
+        }
+      )
     } else {
       newAdmin._id = this.admin._id
-      obs$ = this.adminsService.update(newAdmin)
+      this.adminsService.update(newAdmin).subscribe(
+        () => {
+          MaterialService.toast('Изменения сохранены.')
+          this.form.controls['password'].reset()
+          this.form.enable()
+        },
+        error => {
+          MaterialService.toast(error.error.message, 'error')
+          this.form.enable()
+        }
+      )
     }
-
-    obs$.subscribe(
-      admin => {
-        this.admin = admin
-        MaterialService.toast('Изменения сохранены.')
-        this.form.enable()
-      },
-      error => {
-        MaterialService.toast(error.error.message, 'error')
-        this.form.enable()
-      }
-    )
   }
 }

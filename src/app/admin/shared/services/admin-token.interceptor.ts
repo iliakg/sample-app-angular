@@ -27,6 +27,7 @@ export class AdminTokenInterceptor implements HttpInterceptor {
 
   private handleAuthError(error: HttpErrorResponse): Observable<any> {
     if (error.status === 401) {
+      this.auth.logout() // if token expired
       this.router.navigate(['/admin/login'], {
         queryParams: {
           sessionFailed: true

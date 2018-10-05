@@ -24,7 +24,7 @@ export class AdminsService {
   }
 
   update(admin: Admin): Observable<Admin> {
-    return this.http.patch<Admin>(`/api/admins/${admin._id}`, admin)
+    return this.http.put<Admin>(`/api/admins/${admin._id}`, admin)
   }
 
   delete(admin: Admin): Observable<any> {
