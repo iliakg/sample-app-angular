@@ -5,7 +5,7 @@ import {switchMap} from 'rxjs/operators'
 import {of} from 'rxjs'
 
 import {AdminsService} from '../../shared/services/admins.service'
-import {Admin} from '../../shared/interfaces'
+import {Admin, Error} from '../../shared/interfaces'
 import {MaterialService} from '../../../shared/services/materialize.service'
 
 @Component({
@@ -14,6 +14,7 @@ import {MaterialService} from '../../../shared/services/materialize.service'
 
 export class AdminFormComponent implements OnInit {
   form: FormGroup
+  errors: Error[]
   isNew = true
   admin: Admin
 
@@ -83,7 +84,7 @@ export class AdminFormComponent implements OnInit {
           this.router.navigate(['/admin/admins'])
         },
         error => {
-          MaterialService.toast(error.error.message, 'error')
+          this.errors = error.error
           this.form.enable()
         }
       )
@@ -93,10 +94,11 @@ export class AdminFormComponent implements OnInit {
         () => {
           MaterialService.toast('Изменения сохранены.')
           this.form.controls['password'].reset()
+          this.errors = null
           this.form.enable()
         },
         error => {
-          MaterialService.toast(error.error.message, 'error')
+          this.errors = error.error
           this.form.enable()
         }
       )

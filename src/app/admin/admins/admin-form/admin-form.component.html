@@ -4,6 +4,7 @@
 
 <div class="white z-depth-1 form_wrapper">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-form-errors [errors]="errors"></app-form-errors>
     <div class="input-field">
       <input
         formControlName="email"
